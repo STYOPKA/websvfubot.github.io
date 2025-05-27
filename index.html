@@ -120,7 +120,7 @@
             let phone = document.getElementById("user_phone").value;
             let adr = document.getElementById("user_adr").value;
             let pod = document.getElementById("user_pod").value;
-            let kv = document.getElementById("user_kv").value;
+            let kv = document.getElementById("user_kv").value
             if(name.length < 5) {
                 document.getElementById("error").innerText = 'Ошибка в имени';
                 return;
@@ -152,7 +152,7 @@
                 phone: phone,
                 adr: adr,
                 pod: pod,
-                kv: kv,
+                kv: kv
             }
             tg.sendData(JSON.stringify(data));
 
