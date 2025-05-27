@@ -133,6 +133,18 @@
                 document.getElementById("error").innerText = 'Ошибка в номере телефона';
                 return;
             }
+            if(adr.length < 5) {
+                document.getElementById("error").innerText = 'Ошибка в имени';
+                return;
+            }
+            if(pod.length < 5) {
+                document.getElementById("error").innerText = 'Ошибка в имени';
+                return;
+            }
+            if(kv.length < 5) {
+                document.getElementById("error").innerText = 'Ошибка в имени';
+                return;
+            }
 
             let data = {
                 name: name,
