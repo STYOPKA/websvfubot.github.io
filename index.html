@@ -134,14 +134,14 @@
                 return;
             }
             if(adr.length < 5) {
-                document.getElementById("error").innerText = 'Ошибка в имени';
+                document.getElementById("error").innerText = 'Ошибка в адресе';
                 return;
             }
-            if(pod.length < 5) {
-                document.getElementById("error").innerText = 'Ошибка в имени';
+            if(pod.length > 2) {
+                document.getElementById("error").innerText = 'Ошибка в подъезде';
                 return;
             }
-            if(kv.length < 5) {
+            if(kv.length > 4) {
                 document.getElementById("error").innerText = 'Ошибка в имени';
                 return;
             }
