@@ -93,6 +93,9 @@
         <input type="text" placeholder="ФИО" id="user_name">
         <input type="text" placeholder="Email" id="user_email">
         <input type="text" placeholder="Телефон" id="user_phone">
+        <input type="text" placeholder="Адрес" id="user_adr">
+        <input type="text" placeholder="Подъезд" id="user_pod">
+        <input type="text" placeholder="Квартира" id="user_kv">
         <div id="error"></div>
         <button id="order">Оформить заявку</button>
     </form>
@@ -115,6 +118,9 @@
             let name = document.getElementById("user_name").value;
             let email = document.getElementById("user_email").value;
             let phone = document.getElementById("user_phone").value;
+            let phone = document.getElementById("user_adr").value;
+            let phone = document.getElementById("user_pod").value;
+            let phone = document.getElementById("user_kv").value;
             if(name.length < 5) {
                 document.getElementById("error").innerText = 'Ошибка в имени';
                 return;
@@ -131,7 +137,10 @@
             let data = {
                 name: name,
                 email: email,
-                phone: phone
+                phone: phone,
+                adr: adr,
+                pod: pod,
+                kv: kv
             }
             tg.sendData(JSON.stringify(data));
 
