@@ -137,12 +137,12 @@
                 document.getElementById("error").innerText = 'Ошибка в адресе';
                 return;
             }
-            if(pod.length > 2) {
+            if(pod.length < 0) {
                 document.getElementById("error").innerText = 'Ошибка в подъезде';
                 return;
             }
-            if(kv.length > 4) {
-                document.getElementById("error").innerText = 'Ошибка в имени';
+            if(kv.length < 0) {
+                document.getElementById("error").innerText = 'Ошибка в квартире';
                 return;
             }
 
