@@ -96,6 +96,7 @@
         <input type="text" placeholder="Адрес" id="user_adr">
         <input type="text" placeholder="Подъезд" id="user_pod">
         <input type="text" placeholder="Квартира" id="user_kv">
+        <input type="text" placeholder="Жалоба" id="user_jal">
         <div id="error"></div>
         <button id="order">Оформить заявку</button>
     </form>
@@ -121,6 +122,7 @@
             let adr = document.getElementById("user_adr").value;
             let pod = document.getElementById("user_pod").value;
             let kv = document.getElementById("user_kv").value;
+            let jal = document.getElementById("user_jal").value;
             if(name.length < 5) {
                 document.getElementById("error").innerText = 'Ошибка в имени';
                 return;
@@ -137,12 +139,16 @@
                 document.getElementById("error").innerText = 'Ошибка в адресе';
                 return;
             }
-            if(pod.length < 0) {
+            if(pod.length > 0) {
                 document.getElementById("error").innerText = 'Ошибка в подъезде';
                 return;
             }
-            if(kv.length < 0) {
+            if(kv.length > 0) {
                 document.getElementById("error").innerText = 'Ошибка в квартире';
+                return;
+            }
+            if(kv.length > 1) {
+                document.getElementById("error").innerText = 'Ошибка в тексте';
                 return;
             }
 
@@ -152,7 +158,8 @@
                 phone: phone,
                 adr: adr,
                 pod: pod,
-                kv: kv
+                kv: kv,
+                jal: jal
             }
             tg.sendData(JSON.stringify(data));
 
