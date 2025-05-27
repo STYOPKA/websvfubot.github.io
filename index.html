@@ -122,7 +122,6 @@
             let adr = document.getElementById("user_adr").value;
             let pod = document.getElementById("user_pod").value;
             let kv = document.getElementById("user_kv").value;
-            let jal = document.getElementById("user_jal").value
             if(name.length < 5) {
                 document.getElementById("error").innerText = 'Ошибка в имени';
                 return;
@@ -147,10 +146,6 @@
                 document.getElementById("error").innerText = 'Ошибка в квартире';
                 return;
             }
-            if(jal.length > 1) {
-                document.getElementById("error").innerText = 'Ошибка в тексте';
-                return;
-            }
 
             let data = {
                 name: name,
@@ -159,7 +154,6 @@
                 adr: adr,
                 pod: pod,
                 kv: kv,
-                jal: jal
             }
             tg.sendData(JSON.stringify(data));
 
